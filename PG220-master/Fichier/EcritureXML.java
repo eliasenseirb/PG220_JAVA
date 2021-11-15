@@ -1,0 +1,5 @@
+package Fichier;
+
+class EcritureXML {
+
+}
