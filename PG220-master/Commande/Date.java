@@ -2,7 +2,7 @@ package Commande;
 
         //potentiellement ajouter une conversion du mois en string avec un tab qui rassemble tout
 
-class Date {
+class Date extends Infos implements CheckCommande{
         int jour;
         int mois;
         int annee;
@@ -37,5 +37,14 @@ class Date {
 
         void setAnnee(int annee) {
                 this.annee = annee;
+        }
+
+        //Date d = new Date(12, 03, 15);
+
+        //System.out.println("Nous sommes le" + d.jour + "" + d.mois + "." + d.annee);
+
+        @Override
+        public boolean isValid() {
+                return d.getJour() >= 1 || d.getJour() <= 31 && d.getMois() >= 1 || d.getMois() <= 12;
         }
 }
