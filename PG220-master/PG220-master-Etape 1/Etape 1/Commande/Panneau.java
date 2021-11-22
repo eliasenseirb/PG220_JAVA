@@ -1,5 +1,0 @@
-package Commande;
-
-        class Panneau {
-
-        }

@@ -1,5 +1,0 @@
-package Commande;
-
-        interface CheckCommande {
-
-        }

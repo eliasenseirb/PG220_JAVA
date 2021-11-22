@@ -1,5 +1,0 @@
-package Decoupe
-
-        class Algorithme {
-
-        }

@@ -1,6 +1,0 @@
-package Commande;
-
-        class Planche {
-
-
-        }

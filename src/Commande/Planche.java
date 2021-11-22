@@ -1,6 +1,6 @@
 package Commande;
 
-        class Planche {
+        public class Planche {
 
 
         }

@@ -1,4 +1,4 @@
-package Decoupe
+package Decoupe;
 
         class Algorithme {
 
