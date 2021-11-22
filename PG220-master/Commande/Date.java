@@ -2,14 +2,22 @@ package Commande;
 
         //potentiellement ajouter une conversion du mois en string avec un tab qui rassemble tout
 
-class Date extends Infos implements CheckCommande{
+class Date extends Infos implements CheckCommande, Generable{
         int jour;
         int mois;
         int annee;
 
+        /*
         Date(int jour, int mois, int annee)  throws CheckDate {
                 if ((jour < 1) || (jour > 31) || (mois < 1) || (mois > 12))
                         throw new CheckDate(this);
+                this.jour = jour;
+                this.mois = mois;
+                this.annee = annee;
+        }
+        */
+
+        Date(int jour, int mois, int annee) {
                 this.jour = jour;
                 this.mois = mois;
                 this.annee = annee;
