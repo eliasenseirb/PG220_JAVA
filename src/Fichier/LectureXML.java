@@ -1,7 +1,5 @@
 package Fichier;
 
-import Commande.Planche;
-
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamException;
@@ -12,73 +10,79 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LectureXML {
-    static void readXml(String filename)
-    {
-        try
-        {
+    static void readXml(String filename) {
+        try {
             FileInputStream file = new FileInputStream(filename);
             XMLStreamReader reader = XMLInputFactory.newInstance().createXMLStreamReader(file);
-            while(reader.hasNext())
-            {
-                if(reader.next() == XMLStreamConstants.START_ELEMENT)
-                {
-                    if(reader.getName().toString() == "client")
-                    {
-                        Client c = readClient(reader);
+            while (reader.hasNext()) {
+                if (reader.next() == XMLStreamConstants.START_ELEMENT) {
+                    if (reader.getName().toString() == "client") {
+                        List<List<List<String>>> c = readClient(reader);
+                    }
+                    if(reader.getName().toString( )== "fournisseur"){
+                        List<List<List<String>>> f = readFournisseur(reader);
                     }
                 }
             }
-        }
-        catch (FileNotFoundException e)
-        {
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
-        }
-        catch (XMLStreamException e)
-        {
+        } catch (XMLStreamException e) {
             e.printStackTrace();
         }
     }
-    static Client readClient(XMLStreamReader reader) throws XMLStreamException
-    {
+
+    static List<List<List<String>>> readClient(XMLStreamReader reader) throws XMLStreamException {
         int id = Integer.parseInt(reader.getAttributeValue(0));
-        List<Commande.CommandeFactory.generatePlanche(idPlanche,date,dime,prix)> listPlanche = new ArrayList<>();
-        while(reader.hasNext())
-        {
-            if(reader.next() == XMLStreamConstants.START_ELEMENT)
-            {
-                if(reader.getName().toString() == "planche")
-                {
-                    Planche p = readPlanche(reader);
+        List<List<String>> listPlanche = new ArrayList<>();
+        while (reader.hasNext()) {
+            if (reader.next() == XMLStreamConstants.START_ELEMENT) {
+                if (reader.getName().toString() == "planche") {
+                    List<String> p = readBois(reader);
                     listPlanche.add(p);
                 }
 
             }
         }
-        return new Client(id,listPlanche);
+        List<List<List<String>>> Client = new ArrayList<>(id, listPlanche);
+        return Client;
     }
 
-    static Planche readPlanche(XMLStreamReader reader) throws XMLStreamException
-        {
-        int idPlanche = Integer.parseInt(getAttributeValue(0));
+    static List<List<List<String>>> readFournisseur(XMLStreamReader reader) throws XMLStreamException {
+        int id = Integer.parseInt(reader.getAttributeValue(0));
+        List<List<String>> listPanneau = new ArrayList<>();
+        while (reader.hasNext()) {
+            if (reader.next() == XMLStreamConstants.START_ELEMENT) {
+                if (reader.getName().toString() == "panneau") {
+                    List<String> pan = readBois(reader);
+                    listPanneau.add(pan);
+                }
+
+            }
+        }
+        List<List<List<String>>> Client = new ArrayList<>(id, listPanneau);
+        return Client;
+    }
+
+    static List<String> readBois(XMLStreamReader reader) throws XMLStreamException {
+        String idBois = reader.getAttributeValue(0);
+        String nombre = reader.getAttributeValue(1);
         String date = reader.getAttributeValue(2);
-        String [] split = date.split("\\.");
-        int jour = Integer.parseInt(split[0]);
-        int mois = Integer.parseInt(split[1]);
-        int annee = Integer.parseInt(split[2]);
-        int prix = Integer.parseInt(reader.getAttributeValue(3));
-        while(reader.hasNext())
-        {
-            if(reader.next() == XMLStreamConstants.START_ELEMENT)
-            {
-                if(reader.getName().toString() == "dim")
-                {
-                    int longueur= Integer.parseInt(reader.getAttributeValue(0));
-                    int largeur = Integer.parseInt(reader.getAttributeValue(1));
+        String[] split = date.split("\\.");
+        String jour = split[0];
+        String mois = split[1];
+        String annee = split[2];
+        String prix = reader.getAttributeValue(3);
+
+        while (reader.hasNext()) {
+            if (reader.next() == XMLStreamConstants.START_ELEMENT) {
+                if (reader.getName().toString() == "dim") {
+                    String longueur = reader.getAttributeValue(0);
+                    String largeur = reader.getAttributeValue(1);
                 }
             }
         }
-        
-        ClientFactory.generateDimension(longueur,largeur);
-        return new Planche(idPlanche,date,prix,dim);
+        List<String> Bois= new ArrayList<>(idBois, nombre, jour, mois, annee, prix, longueur, largeur);
+        return Bois;
     }
 }
+

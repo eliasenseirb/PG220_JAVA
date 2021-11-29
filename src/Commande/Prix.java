@@ -1,13 +1,32 @@
 package Commande;
 
-public class Prix extends Infos{
-    private int prix;
+class Prix extends Infos implements CheckCommande, Generable{
+    int prix;
+    int nb;
 
-    public int getPrix() {
-        return prix;
+    Prix(int prix_unitaire, int nombre) {
+        this.prix = prix_unitaire;
+        this.nb = nombre;
     }
 
-    public void setPrix(int prix) {
+    int getPrix() {
+        return this.prix;
+    }
+
+    int getNb() {
+        return this.nb;
+    }
+
+    void setPrix(int prix) {
         this.prix = prix;
+    }
+
+    void setNb(int nb) {
+        this.nb = nb;
+    }
+
+    @Override
+    public boolean isValid() {
+        return p.getPrixUnit() >= 1 || p.getNb() >= 1;
     }
 }
