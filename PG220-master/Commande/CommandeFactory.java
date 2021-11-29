@@ -10,8 +10,8 @@ public class CommandeFactory implements Generable{
         return new Dimension(longueur, largeur);
     }
 
-    Prix generatePrix(int prix_unitaire, int nombre) {
-        return new Prix(prix_unitaire, nombre);
+    Prix generatePrix(int prix, int nombre) {
+        return new Prix(prix, nombre);
     }
 
     Planche generatePlanche(int id_planche, Date d, Dimension dim, Prix p) {
