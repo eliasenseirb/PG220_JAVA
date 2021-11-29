@@ -10,7 +10,7 @@ public class CommandeFactory implements Generable{
         return new Dimension(longueur, largeur);
     }
 
-    Prix generatePrix(int prix_unitaire, int nombre) {
+    Prix generatePrix(int prix, int nombre) {
         return new Prix(prix, nombre);
     }
 
