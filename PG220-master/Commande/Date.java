@@ -2,7 +2,7 @@ package Commande;
 
         //potentiellement ajouter une conversion du mois en string avec un tab qui rassemble tout
 
-class Date extends Infos implements CheckCommande, Generable{
+class Date implements CheckCommande, Generable{
         int jour;
         int mois;
         int annee;
@@ -35,17 +35,6 @@ class Date extends Infos implements CheckCommande, Generable{
                 return this.annee;
         }
 
-        void setJour(int jour) {
-                this.jour = jour;
-        }
-
-        void setMois(int mois) {
-                this.mois = mois;
-        }
-
-        void setAnnee(int annee) {
-                this.annee = annee;
-        }
 
         //Date d = new Date(12, 03, 15);
 
@@ -53,6 +42,12 @@ class Date extends Infos implements CheckCommande, Generable{
 
         @Override
         public boolean isValid() {
-                return d.getJour() >= 1 || d.getJour() <= 31 && d.getMois() >= 1 || d.getMois() <= 12;
+                if(getJour() >= 1 || getJour() <= 31 && getMois() >= 1 || getMois() <= 12)
+                        System.out.println("Classe Date valide");
+                else if(getJour() < 1 || getJour() > 31)
+                        System.out.println("Jour incorrect");
+                else if(getMois() < 1 || getMois() > 12)
+                        System.out.println("Mois incorrect");
+                return getJour() >= 1 || getJour() <= 31 && getMois() >= 1 || getMois() <= 12;
         }
 }

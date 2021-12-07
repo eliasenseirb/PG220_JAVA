@@ -1,30 +1,27 @@
 package Commande;
 
 class Client implements Generable{
-        int id_client;
+        int idClient;
         Planche planche;
 
-        Client(int id_client, Planche p) {
-                super(p);
-                this.id_client = id_client;
+        Client(int idClient, Planche p) {
+                this.idClient = idClient;
+                this.planche = p;
         }
 
 
 
-        int getId() {
-        return this.id_client;
+int getId() {
+        return this.idClient;
 }
 
-        int getPrixUnitaire() {
-                return this.planche.p_planche.prix/this.planche.p_planche.nb;
+int getPrixUnitaire() {
+                return this.planche.dataPlanche.p.prix/this.planche.dataPlanche.p.nb;
         }
 
 Planche GetPlanche() {
         return this.planche;
 }
 
-void idIncrementation(int id_client) {
-        this.id_client++;
-}
 
 }

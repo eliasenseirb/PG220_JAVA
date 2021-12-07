@@ -1,27 +1,24 @@
 package Commande;
 
 class Fournisseur implements Generable{
-        int id_fournisseur;
+        int idFournisseur;
         Panneau panneau;
 
-    public Fournisseur(int id_fournisseur, Panneau p) {
-        super(p);
-        this.id_fournisseur = id_fournisseur;
+    public Fournisseur(int idFournisseur, Panneau p) {
+        this.idFournisseur = idFournisseur;
+        this.panneau = p;
     }
 
-    int getId() {
-        return this.id_fournisseur;
+int getId() {
+        return this.idFournisseur;
 }
 
-    int getPrixTot() {
-        return this.panneau.p_panneau.prix*this.panneau.p_panneau.nb;
+int getPrixTot() {
+        return this.panneau.dataPanneau.p.prix*this.panneau.dataPanneau.p.nb;
     }
 
 Panneau getPanneau() {
         return this.panneau;
-}
-void idIncrementation(int id_fournisseur) {
-        this.id_fournisseur++;
 }
 
 }

@@ -86,7 +86,7 @@ public class WriteXML {
         writer.writeStartElement("decoupes");
         writer.writeStartElement("decoupe");
         writer.writeStartElement("client");
-        writer.writeAttribute("id", c.id_client);
+        writer.writeAttribute("id", c.idClient);
         writer.writeAttribute("planche", c.planche.id_planche);
         writer.writeEndElement();
         writer.writeStartElement("fournisseur");

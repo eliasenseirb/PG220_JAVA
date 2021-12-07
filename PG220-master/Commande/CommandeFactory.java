@@ -14,20 +14,20 @@ public class CommandeFactory implements Generable{
         return new Prix(prix, nombre);
     }
 
-    Planche generatePlanche(int id_planche, Date d, Dimension dim, Prix p) {
-        return new Planche(id_planche, d, dim, p);
+    Planche generatePlanche(int idPlanche, Infos dataPlanche) {
+        return new Planche(idPlanche, dataPlanche);
     }
 
-    Panneau generatePanneau(int id_panneau, Date d, Dimension dim, Prix p) {
-        return new Panneau(id_panneau, d, dim, p);
+    Panneau generatePanneau(int idPanneau, Infos dataPanneau) {
+        return new Panneau(idPanneau, dataPanneau);
     }
 
-    Client generateClient(int id_client, Planche p) {
-        return new Client(id_client, p);
+    Client generateClient(int idClient, Planche p) {
+        return new Client(idClient, p);
     }
 
-    Fournisseur generateFournisseur(int id_fournisseur, Panneau p) {
-        return new Fournisseur(id_fournisseur, p);
+    Fournisseur generateFournisseur(int idFournisseur, Panneau p) {
+        return new Fournisseur(idFournisseur, p);
     }
 }
 
