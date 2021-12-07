@@ -1,24 +1,20 @@
 package Commande;
 
-class Fournisseur implements Generable{
-        int idFournisseur;
-        Panneau panneau;
+class Fournisseur extends Personne implements Generable{
+
 
     public Fournisseur(int idFournisseur, Panneau p) {
-        this.idFournisseur = idFournisseur;
-        this.panneau = p;
+        this.id = idFournisseur;
+        this.bois = p;
     }
 
 int getId() {
-        return this.idFournisseur;
+        return this.id;
 }
 
 int getPrixTot() {
-        return this.panneau.dataPanneau.p.prix*this.panneau.dataPanneau.p.nb;
+        return this.bois.prix.prix*this.bois.prix.nb;
     }
 
-Panneau getPanneau() {
-        return this.panneau;
-}
 
 }

@@ -1,9 +1,6 @@
 package Commande;
 
-        interface CheckCommande {
+        public interface CheckCommande {
 
                boolean isValid();
-
-
-                //ajouter une fonction qui écrit le message d'erreur approprié
         }

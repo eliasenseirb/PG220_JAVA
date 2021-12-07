@@ -1,5 +1,7 @@
 package Fichier;
 
+/*
+
 import Commande.Planche;
 
 import javax.xml.stream.XMLInputFactory;
@@ -83,3 +85,5 @@ public class ReadXML {
         return Planche;
     }
 }
+
+ */

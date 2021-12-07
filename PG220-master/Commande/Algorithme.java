@@ -25,17 +25,18 @@ void algo1(Client c, Fournisseur f, int xCut, int yCut) {
                 min = yCut;
         }
 
-        if(c.planche.dataPlanche.dim.longueur + min < f.panneau.dataPanneau.dim.longueur &&
-           c.planche.dataPlanche.dim.largeur + max < f.panneau.dataPanneau.dim.largeur &&
-           c.planche.dataPlanche.d.annee >= f.panneau.dataPanneau.d.annee &&
-           c.planche.dataPlanche.d.mois >= f.panneau.dataPanneau.d.mois &&
-           c.planche.dataPlanche.d.jour >= f.panneau.dataPanneau.d.jour &&
-           c.planche.dataPlanche.p.prix >= f.panneau.dataPanneau.p.prix*f.panneau.dataPanneau.p.nb) {
+        if(c.bois.dim.longueur + min < f.bois.dim.longueur &&
+           c.bois.dim.largeur + max < f.bois.dim.largeur &&
+           c.bois.date.annee >= f.bois.date.annee &&
+           c.bois.date.mois >= f.bois.date.mois &&
+           c.bois.date.jour >= f.bois.date.jour &&
+           c.bois.prix.prix >= f.bois.prix.prix*f.bois.prix.nb) {
                 //read decoupe.xml et faire les bonnes decoupe
                 //decouper comme on peut jusqu'au maximum sinon
 
 
         }
+
 }
 
 }

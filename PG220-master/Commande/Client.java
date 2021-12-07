@@ -1,27 +1,22 @@
 package Commande;
 
-class Client implements Generable{
-        int idClient;
-        Planche planche;
+class Client extends Personne implements Generable{
 
         Client(int idClient, Planche p) {
-                this.idClient = idClient;
-                this.planche = p;
+                this.id = idClient;
+                this.bois = p;
         }
 
 
 
 int getId() {
-        return this.idClient;
+        return this.id;
 }
 
 int getPrixUnitaire() {
-                return this.planche.dataPlanche.p.prix/this.planche.dataPlanche.p.nb;
+                return this.bois.prix.prix/this.bois.prix.nb;
         }
 
-Planche GetPlanche() {
-        return this.planche;
-}
 
 
 }

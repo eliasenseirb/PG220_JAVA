@@ -1,5 +1,7 @@
 package Fichier;
 
+/*
+
 import Commande.Client;
 import Commande.Planche;
 import java.io.StringWriter;
@@ -102,3 +104,5 @@ public class WriteXML {
 
     }
 }
+
+*/
