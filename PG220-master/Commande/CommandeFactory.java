@@ -1,5 +1,7 @@
 package Commande;
 
+import java.util.ArrayList;
+
 public class CommandeFactory implements Generable{
 
     Date generateDate(int jour, int mois, int annee) throws CheckDate {
@@ -22,12 +24,12 @@ public class CommandeFactory implements Generable{
         return new Panneau(idPanneau, d, p, dim);
     }
 
-    Client generateClient(int idClient, Planche p) {
-        return new Client(idClient, p);
+    Client generateClient(int idClient, ArrayList<TypeBois> listPlanche) {
+        return new Client(idClient, listPlanche);
     }
 
-    Fournisseur generateFournisseur(int idFournisseur, Panneau p) {
-        return new Fournisseur(idFournisseur, p);
+    Fournisseur generateFournisseur(int idFournisseur, ArrayList<TypeBois> listPanneau) {
+        return new Fournisseur(idFournisseur, listPanneau);
     }
 }
 

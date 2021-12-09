@@ -24,7 +24,7 @@ void algo1(Client c, Fournisseur f, int xCut, int yCut) {
                 max = min;
                 min = yCut;
         }
-
+        /*
         if(c.bois.dim.longueur + min < f.bois.dim.longueur &&
            c.bois.dim.largeur + max < f.bois.dim.largeur &&
            c.bois.date.annee >= f.bois.date.annee &&
@@ -36,7 +36,7 @@ void algo1(Client c, Fournisseur f, int xCut, int yCut) {
 
 
         }
-
+        */
 }
 
 }
