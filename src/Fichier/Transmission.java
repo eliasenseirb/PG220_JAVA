@@ -12,6 +12,6 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 interface Transmission{
-
-    void sendData();
+    void readXml(String filename);
+    void writeXml();
 }
