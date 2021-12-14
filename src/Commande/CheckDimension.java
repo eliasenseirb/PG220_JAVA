@@ -10,11 +10,9 @@ class CheckDimension extends Exception {
             System.out.println("Veuillez modifier la longueur dans la dimension");
         if((dim.getLargeur() < 1))
             System.out.println("Veuillez modifier la largeur dans la dimension");
+        if((dim.getLargeur() > dim.getLongueur()))
+            System.out.println("Veuillez modifier la largeur dans la dimension (> longueur)");
         this.dim = dim;
-    }
-
-    boolean isValid() {
-        return dim.getLongueur() >= 1 && dim.getLargeur() >= 1;
     }
 
 }

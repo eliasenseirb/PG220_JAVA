@@ -1,27 +1,19 @@
 package Commande;
 
-        //potentiellement ajouter une conversion du mois en string avec un tab qui rassemble tout
-
-class Date extends Infos implements CheckCommande, Generable{
+class Date implements CheckCommande, Generable{
         int jour;
         int mois;
         int annee;
 
-        /*
+
         Date(int jour, int mois, int annee)  throws CheckDate {
-                if ((jour < 1) || (jour > 31) || (mois < 1) || (mois > 12))
+                if ((jour < 1) || (jour > 31) || (mois < 1) || (mois > 12) || (annee <= 21))
                         throw new CheckDate(this);
                 this.jour = jour;
                 this.mois = mois;
                 this.annee = annee;
         }
-        */
 
-        Date(int jour, int mois, int annee) {
-                this.jour = jour;
-                this.mois = mois;
-                this.annee = annee;
-        }
 
         int getJour() {
                 return this.jour;
@@ -35,24 +27,16 @@ class Date extends Infos implements CheckCommande, Generable{
                 return this.annee;
         }
 
-        void setJour(int jour) {
-                this.jour = jour;
-        }
 
-        void setMois(int mois) {
-                this.mois = mois;
-        }
-
-        void setAnnee(int annee) {
-                this.annee = annee;
-        }
-
-        //Date d = new Date(12, 03, 15);
-
-        //System.out.println("Nous sommes le" + d.jour + "" + d.mois + "." + d.annee);
-
-        @Override
         public boolean isValid() {
-                return d.getJour() >= 1 || d.getJour() <= 31 && d.getMois() >= 1 || d.getMois() <= 12;
+                if(getJour() >= 1 || getJour() <= 31 && getMois() >= 1 || getMois() <= 12)
+                        System.out.println("Classe Date valide");
+                if(getJour() < 1 || getJour() > 31)
+                        System.out.println("Jour incorrect");
+                if(getMois() < 1 || getMois() > 12)
+                        System.out.println("Mois incorrect");
+                if(getAnnee() < 21)
+                        System.out.println("Année incorrect");
+                return getJour() >= 1 || getJour() <= 31 && getMois() >= 1 || getMois() <= 12;
         }
 }

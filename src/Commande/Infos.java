@@ -6,16 +6,4 @@ abstract class Infos {
         Prix p;
 
 
-
-Date getDate() {
-        return d;
-}
-
-Dimension getDimension() {
-        return dim;
-}
-
-Prix getPrix() {
-        return p;
-}
 }

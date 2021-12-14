@@ -1,27 +1,17 @@
 package Commande;
 
-class Fournisseur implements Generable{
-        int id_fournisseur;
-        Panneau panneau;
+import java.util.ArrayList;
 
-    public Fournisseur(int id_fournisseur, Panneau p) {
-        super(p);
-        this.id_fournisseur = id_fournisseur;
+class Fournisseur extends Personne implements Generable{
+
+
+    Fournisseur(int idFournisseur, ArrayList<TypeBois> p) {
+        super(idFournisseur, p);
     }
 
-    int getId() {
-        return this.id_fournisseur;
+int getId() {
+        return this.id;
 }
 
-    int getPrixTot() {
-        return this.panneau.p_panneau.prix*this.panneau.p_panneau.nb;
-    }
-
-Panneau getPanneau() {
-        return this.panneau;
-}
-void idIncrementation(int id_fournisseur) {
-        this.id_fournisseur++;
-}
 
 }

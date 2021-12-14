@@ -1,33 +1,35 @@
 package Commande;
 
+import java.util.ArrayList;
+
 public class CommandeFactory implements Generable{
 
-    Date generateDate(int jour, int mois, int annee) {
+    Date generateDate(int jour, int mois, int annee) throws CheckDate {
         return new Date(jour, mois, annee);
     }
 
-    Dimension generateDimension(int longueur, int largeur) {
+    Dimension generateDimension(int longueur, int largeur) throws CheckDimension {
         return new Dimension(longueur, largeur);
     }
 
-    Prix generatePrix(int prix, int nombre) {
+    Prix generatePrix(int prix, int nombre) throws CheckPrix {
         return new Prix(prix, nombre);
     }
 
-    Planche generatePlanche(int id_planche, Date d, Dimension dim, Prix p) {
-        return new Planche(id_planche, d, dim, p);
+    Planche generatePlanche(int idPlanche, Date d, Prix p, Dimension dim) {
+        return new Planche(idPlanche, d, p, dim);
     }
 
-    Panneau generatePanneau(int id_panneau, Date d, Dimension dim, Prix p) {
-        return new Panneau(id_panneau, d, dim, p);
+    Panneau generatePanneau(int idPanneau, Date d, Prix p, Dimension dim) {
+        return new Panneau(idPanneau, d, p, dim);
     }
 
-    Client generateClient(int id_client, Planche p) {
-        return new Client(id_client, p);
+    Client generateClient(int idClient, ArrayList<TypeBois> listPlanche) {
+        return new Client(idClient, listPlanche);
     }
 
-    Fournisseur generateFournisseur(int id_fournisseur, Panneau p) {
-        return new Fournisseur(id_fournisseur, p);
+    Fournisseur generateFournisseur(int idFournisseur, ArrayList<TypeBois> listPanneau) {
+        return new Fournisseur(idFournisseur, listPanneau);
     }
 }
 
